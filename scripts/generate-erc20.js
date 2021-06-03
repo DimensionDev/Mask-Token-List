@@ -6,6 +6,9 @@ const Mainnet = require("../src/erc20/mainnet.json");
 const Ropsten = require("../src/erc20/ropsten.json");
 const Rinkeby = require("../src/erc20/rinkeby.json");
 const Bnbt = require("../src/erc20/bnbt.json");
+const BscMainnet = require("../src/erc20/bsc_mainnet.json");
+const MaticMumbai = require("../src/erc20/matic_mumbai.json");
+const MaticMumbaiTest = require("../src/erc20/matic_mumbai_test.json");
 const { addChainId, generateTokenList } = require("./shared");
 
 const MaskTokenList = generateTokenList(
@@ -14,6 +17,9 @@ const MaskTokenList = generateTokenList(
     ...addChainId(Ropsten, 3),
     ...addChainId(Rinkeby, 4),
     ...addChainId(Bnbt, 97),
+    ...addChainId(BscMainnet, 56),
+    ...addChainId(MaticMumbai, 137),
+    ...addChainId(MaticMumbaiTest, 80001),
     ...Object.keys(metadata)
       .filter((key) => {
         const record = metadata[key];
