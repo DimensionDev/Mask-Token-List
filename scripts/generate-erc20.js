@@ -5,10 +5,10 @@ const { EthereumAddress } = require("wallet.ts");
 const Mainnet = require("../src/erc20/mainnet.json");
 const Ropsten = require("../src/erc20/ropsten.json");
 const Rinkeby = require("../src/erc20/rinkeby.json");
-const Bnbt = require("../src/erc20/bnbt.json");
-const BscMainnet = require("../src/erc20/bsc_mainnet.json");
-const MaticMumbai = require("../src/erc20/matic_mumbai.json");
-const MaticMumbaiTest = require("../src/erc20/matic_mumbai_test.json");
+const Bsc = require("../src/erc20/bsc.json");
+const Chapel = require("../src/erc20/chapel.json");
+const Matic = require("../src/erc20/matic.json");
+const Mumbai = require("../src/erc20/mumbai.json");
 const { addChainId, generateTokenList } = require("./shared");
 
 const MaskTokenList = generateTokenList(
@@ -16,10 +16,10 @@ const MaskTokenList = generateTokenList(
     ...addChainId(Mainnet, 1),
     ...addChainId(Ropsten, 3),
     ...addChainId(Rinkeby, 4),
-    ...addChainId(Bnbt, 97),
-    ...addChainId(BscMainnet, 56),
-    ...addChainId(MaticMumbai, 137),
-    ...addChainId(MaticMumbaiTest, 80001),
+    ...addChainId(Bsc, 56),
+    ...addChainId(Chapel, 97),
+    ...addChainId(Matic, 137),
+    ...addChainId(Mumbai, 80001),
     ...Object.keys(metadata)
       .filter((key) => {
         const record = metadata[key];

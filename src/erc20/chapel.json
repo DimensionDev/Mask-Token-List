@@ -32,7 +32,7 @@
   {
     "decimals": 18,
     "symbol": "USDC",
-    "name": "USDC on test",
+    "name": "USDC",
     "address": "0x9780881bf45b83ee028c4c1de7e0c168df8e9eef"
   }
 ]
