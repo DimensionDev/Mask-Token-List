@@ -427,6 +427,11 @@ query-string@^4.1.0:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
+quickswap-default-token-list@^1.0.63:
+  version "1.0.63"
+  resolved "https://registry.yarnpkg.com/quickswap-default-token-list/-/quickswap-default-token-list-1.0.63.tgz#b5ea23a28605ecb6c0a3670abd0345ff1d405a7e"
+  integrity sha512-qXPm0zN4c0aN1wMFtkoqgk/OPkRZ2r63nYIBlPRkfKjUGnM2I4EfA/tnD84jK9CKmr4ardRMPq5N99dhqJL61g==
+
 safe-buffer@^5.0.1:
   version "5.2.1"
   resolved "https://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
