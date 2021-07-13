@@ -17,9 +17,9 @@ async function fetchDebankLogoURI(chainId, tokenIds) {
   const allRequest = []
   for (let i = 0, j = tokenIds.length; i < j; i += DEBANK_REQUEST_LIMIT) {
     const currentIds = tokenIds.slice(i, i + DEBANK_REQUEST_LIMIT);
-    allRequest.push(() => fetch(getRequestURL(CHAINID_MAPPING[chainId], currentIds.join(','))).then(res => res.json()))
+    allRequest.push(fetch(getRequestURL(CHAINID_MAPPING[chainId], currentIds.join(','))).then(res => res.json()))
   }
-  const data = (await Promise.allSettled(allRequest.map(x => x()))).filter(x => x.status === 'fulfilled').map(x => x.value).flat()
+  const data = (await Promise.allSettled(allRequest)).filter(x => x.status === 'fulfilled').map(x => x.value).flat()
 
   return data.map(x => (
     {

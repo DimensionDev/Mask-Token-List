@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
 VERSION=$(node -p -e "require('./package.json').version")
-CHAIN[0]=dist/v$VERSION
-CHAIN[1]=dist/v$VERSION/1
-CHAIN[3]=dist/v$VERSION/3
-CHAIN[4]=dist/v$VERSION/4
-CHAIN[56]=dist/v$VERSION/56
-CHAIN[97]=dist/v$VERSION/97
-CHAIN[137]=dist/v$VERSION/137
-CHAIN[80001]=dist/v$VERSION/80001
+for i in {1,3,4,56,97,137,80001}; do
+  CHAIN[$i]=dist/v$VERSION/$i
+done
 
 mkdir -p dist
 
