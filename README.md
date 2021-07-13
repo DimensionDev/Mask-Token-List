@@ -10,7 +10,7 @@ The token lists for Mask.
 | mask                                                                                                    | mask_nft                                                                                                  |
 | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [Latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask.json)             | [Latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft.json)           |
-| [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/tokens.json)  | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_17.json)           |
+| [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/tokens.json)  | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_17.json) |
 | [v0.0.16](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_v_0_0_16.json)   | [v0.0.16](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_16.json) |
 | [v0.0.15](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_v_0_0_15.json)   | [v0.0.15](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_15.json) |
 | [v0.0.14](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_v_0_0_14.json)   | [v0.0.14](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_14.json) |
@@ -37,8 +37,8 @@ e.g.
 
 ### Versions based on chain id
 
-| Chain    | Chain Id   | Link                                                                                                       |
-| -------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| Chain    | Chain Id   | Link                                                                                                        |
+| -------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
 | Mainnet  | 1          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/1/tokens.json)    |
 | Ropsten  | 3          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/3/tokens.json)    |
 | Rinkeby  | 4          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/4/tokens.json)    |
