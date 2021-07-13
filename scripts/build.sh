@@ -23,6 +23,7 @@ done
 node scripts/generate-erc721.js > "dist/mask_nft.json"
 
 # build the current version
+cp dist/v${VERSION}/tokens.json "dist/mask.json"
 cp dist/mask_nft.json "dist/mask_nft_v_$(echo $VERSION | sed "s/\./_/g").json"
 
 echo "v${VERSION} is built."

@@ -28,8 +28,20 @@ The token lists for Mask.
 | [v0.0.2](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/maskbook_v_0_0_2.json) |                                                                                                           |
 | [v0.0.1](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/maskbook_v_0_0_1.json) |                                                                                                           |
 
+
 After v0.0.17, User can also get token list by chain id:
 `https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/{$chainId}/tokens.json`
 
 e.g.
 `https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/1/tokens.json`
+
+### Versions based on chain id
+
+| Chain    | Chain Id   | Link                                                                                                       |
+| -------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| Mainnet  | 1          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/1/tokens.json)    |
+| Ropsten  | 3          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/3/tokens.json)    |
+| Rinkeby  | 4          | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/4/tokens.json)    |
+| BSC      | 56         | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/56/tokens.json)   |
+| Matic    | 97         | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/97/tokens.json)   |
+| Mumbai   | 80001      | [v0.0.17](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.17/80001/tokens.json)|
