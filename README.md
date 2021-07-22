@@ -45,5 +45,5 @@ e.g.
 | Rinkeby  | 4          | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/4/tokens.json)     |
 | BSC      | 56         | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/56/tokens.json)    |
 | Matic    | 97         | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/97/tokens.json)    |
-| Arbiturm | 42161      | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/42161/tokens.json) |
 | Mumbai   | 80001      | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/80001/tokens.json) |
+| Arbiturm | 42161      | [latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/42161/tokens.json) |
