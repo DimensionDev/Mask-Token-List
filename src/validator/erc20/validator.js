@@ -18,13 +18,18 @@ const getErc20List = async () => {
  */
 const validator = async (tokenList) => {
   // const erc20List = (await getErc20List()) || localList;
-  const erc20List = localList;
+  const erc20List = localList.data;
   let res = 1;
   const errArr = [];
   for (let i = 0; i < tokenList.length; i++) {
     const token = tokenList[i];
     const isInList = erc20List.filter((item) => {
-      return token.symbol.toLowerCase() == item.symbol.toLowerCase();
+      if (item.platform) {
+        return (
+          token.address.toLowerCase() ==
+          item.platform.token_address.toLowerCase()
+        );
+      }
     });
     if (!isInList.length) {
       errArr.push(token);
