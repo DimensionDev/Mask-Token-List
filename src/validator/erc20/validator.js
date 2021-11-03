@@ -2,7 +2,7 @@ const localList = require("./erc20-list.json");
 const axios = require("axios");
 // const tlist = require("../../../dist/v0.0.21/1/tokens.json");
 
-const getErc20List = async () => {
+const getERC20List = async () => {
   await axios
     .get("https://api.coingecko.com/api/v3/coins/list")
     .then((res) => {
