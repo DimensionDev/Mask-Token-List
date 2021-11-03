@@ -15,12 +15,12 @@ const Mumbai = require("../src/erc20/mumbai.json");
 const PancakeTop100 = require("../src/erc20/pancake-top100.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
+const { erc20Validator } = require("../src/validator/erc20/validator");
 
 const getMatamaskLogoURI = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
 
 const chainId = parseInt(process.argv.slice(2)[0]);
-
 const metaMaskToken = Object.keys(metadata)
   .filter((key) => {
     const record = metadata[key];
@@ -133,7 +133,13 @@ const start = async () => {
   const ajv = new Ajv();
   const validate = ajv.compile(schema);
   if (validate(MaskTokenList)) {
-    process.stdout.write(JSON.stringify(MaskTokenList));
+    const res = await erc20Validator(MaskTokenList.tokens);
+
+    if (res != 1) {
+      console.error("maybe invalid erc20 tokens", res);
+    }
+    const list = JSON.stringify(MaskTokenList);
+    process.stdout.write(list);
   } else {
     console.error("errors on build erc20:");
     console.error(validate.errors);
