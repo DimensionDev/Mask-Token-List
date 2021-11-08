@@ -18,11 +18,15 @@ for i in "${!CHAIN[@]}"; do
 done
 
 node scripts/generate-erc721.js > "dist/mask_nft.json"
+node scripts/generate-flow-token.js> "dist/mask_flow.json"
+node scripts/generate-solana-token.js > "dist/mask_solana.json"
 
 # build the current version
 #cp dist/v${VERSION}/tokens.json "dist/mask.json"
 cp -r dist/v"${VERSION}/" "dist/latest"
 cp dist/mask_nft.json "dist/mask_nft_v_$(echo $VERSION | sed "s/\./_/g").json"
+cp dist/mask_flow.json "dist/mask_flow_v_$(echo $VERSION | sed "s/\./_/g").json"
+cp dist/mask_solana.json "dist/mask_solana_v_$(echo $VERSION | sed "s/\./_/g").json"
 
 echo "v${VERSION} is built."
 

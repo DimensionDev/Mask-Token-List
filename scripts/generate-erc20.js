@@ -12,10 +12,11 @@ const xDai = require("../src/erc20/xdai.json");
 const Matic = require("../src/erc20/matic.json");
 const Arbiturm = require("../src/erc20/arbiturm.json");
 const Mumbai = require("../src/erc20/mumbai.json");
+
 const PancakeTop100 = require("../src/erc20/pancake-top100.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
-const { erc20Validator } = require("../src/validator/erc20/validator");
+const { validateExistenceCMC } = require("../src/validator/erc20/validator");
 
 const getMatamaskLogoURI = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
@@ -131,10 +132,11 @@ const start = async () => {
   );
 
   const ajv = new Ajv();
-  const validate = ajv.compile(schema);
-  if (validate(MaskTokenList)) {
-    const res = await erc20Validator(MaskTokenList.tokens);
 
+  const validate = ajv.compile(schema);
+
+  if (validate(MaskTokenList)) {
+    const res = await validateExistenceCMC(MaskTokenList.tokens);
     if (res != 1) {
       console.error("maybe invalid erc20 tokens", res);
     }
