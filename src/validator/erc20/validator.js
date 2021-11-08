@@ -22,8 +22,7 @@ const validateExistenceCMC = async (tokenList) => {
   let res = 1;
   const errArr = [];
   const existingERC20Addressed = new Set();
-  const list = localList
-  list.data.forEach((item) => {
+  localList.data.forEach((item) => {
     if (item.platform && item.platform.token_address) {
       existingERC20Addressed.add(item.platform.token_address.toLowerCase());
     }
