@@ -790,14 +790,6 @@
         "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
       },
       {
-        "name": "Tether USD",
-        "address": "0x3813e82e6f7098b9583FC0F33a962D02018B6803",
-        "symbol": "USDT",
-        "decimals": 6,
-        "chainId": 80001,
-        "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
-      },
-      {
         "name": "Wrapped Matic",
         "address": "0xd0A1E359811322d97991E03f863a0C30C2cF029C",
         "symbol": "WMATIC",
