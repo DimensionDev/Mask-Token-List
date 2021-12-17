@@ -65,6 +65,7 @@ const chainIdToTokensMapping = {
 };
 
 const getUntreatedTokens = async () => {
+  let oneInchTokens = []
   const baseTokens =
     chainId === 0
       ? Object.entries(chainIdToTokensMapping)
@@ -77,12 +78,16 @@ const getUntreatedTokens = async () => {
           .map((x) => addChainId(x, chainId))
           .flat();
 
+  if (chainId === 1 || chainId === 56 || chainId === 137) {
+    oneInchTokens = await get1inchTokenList(chainId)
+  }
+        
   const debankTokens = await fetchDebankLogoURI(
     chainId,
-    baseTokens.map((x) => x.address)
+    [...baseTokens, ...oneInchTokens].map((x) => x.address)
   );
 
-  return baseTokens.map((token) => {
+  return [...baseTokens, ...oneInchTokens].map((token) => {
     const { logo, ...rest } = token;
     const tokenWithLogoURI = debankTokens.find(
       (x) => x.address.toLowerCase() === token.address.toLowerCase()
