@@ -15,9 +15,11 @@ const Matic = require("../src/erc20/matic.json");
 const Arbiturm = require("../src/erc20/arbiturm.json");
 const Mumbai = require("../src/erc20/mumbai.json");
 const PancakeTop100 = require("../src/erc20/pancake-top100.json");
+const Mainnet1inch = require('../src/erc20/1inch_mainnet.json')
+const Bsc1inch = require('../src/erc20/1inch_bsc.json')
+const Matic1inch = require('../src/erc20/1inch_matic.json')
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
-const { get1inchTokenList } = require('./1inch')
 
 const getMatamaskLogoURI = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
@@ -55,21 +57,20 @@ const quickswapTokens = quickswapTokenlist.tokens.map(
 );
 
 const chainIdToTokensMapping = {
-  1: [metaMaskToken, Mainnet],
+  1: [metaMaskToken, Mainnet, Mainnet1inch],
   3: [Ropsten],
   4: [Rinkeby],
-  56: [Bsc, PancakeTop100],
+  56: [Bsc, PancakeTop100, Bsc1inch],
   97: [Chapel],
   100: [xDai],
   250: [Fantom],
-  137: [Matic, quickswapTokens],
+  137: [Matic, quickswapTokens, Matic1inch],
   42161: [Arbiturm],
   42220: [Celo],
   80001: [Mumbai],
 };
 
 const getUntreatedTokens = async () => {
-  let oneInchTokens = []
   const baseTokens =
     chainId === 0
       ? Object.entries(chainIdToTokensMapping)
@@ -82,17 +83,14 @@ const getUntreatedTokens = async () => {
           .map((x) => addChainId(x, chainId))
           .flat();
 
-  
-  if (chainId === 1 || chainId === 56 || chainId === 137) {
-    oneInchTokens = await get1inchTokenList(chainId)
-  }
+
   
   const debankTokens = await fetchDebankLogoURI(
     chainId,
-    [...baseTokens, ...oneInchTokens].map((x) => x.address)
+    baseTokens.map((x) => x.address)
   );
 
-  return [...baseTokens, ...oneInchTokens].map((token) => {
+  return baseTokens.map((token) => {
     const { logo, ...rest } = token;
     const tokenWithLogoURI = debankTokens.find(
       (x) => x.address.toLowerCase() === token.address.toLowerCase()

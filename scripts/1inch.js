@@ -7,7 +7,12 @@ async function get1inchTokenList(chainId) {
 
     const tokens = (await response.json()).tokens
 
-    return Object.keys(tokens).map((x) => ({chainId, ...tokens[x]}))
+    return Object.keys(tokens).map((x) => tokens[x])
+}
+
+async function test(chainId) {
+    const a = await get1inchTokenList(chainId)
+    console.log(JSON.stringify(a))
 }
 
 
