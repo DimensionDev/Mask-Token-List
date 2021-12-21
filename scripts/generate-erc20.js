@@ -15,9 +15,6 @@ const Matic = require("../src/erc20/matic.json");
 const Arbiturm = require("../src/erc20/arbiturm.json");
 const Mumbai = require("../src/erc20/mumbai.json");
 const PancakeTop100 = require("../src/erc20/pancake-top100.json");
-const Mainnet1inch = require('../src/erc20/1inch_mainnet.json')
-const Bsc1inch = require('../src/erc20/1inch_bsc.json')
-const Matic1inch = require('../src/erc20/1inch_matic.json')
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
 
@@ -57,14 +54,14 @@ const quickswapTokens = quickswapTokenlist.tokens.map(
 );
 
 const chainIdToTokensMapping = {
-  1: [metaMaskToken, Mainnet, Mainnet1inch],
+  1: [metaMaskToken, Mainnet],
   3: [Ropsten],
   4: [Rinkeby],
-  56: [Bsc, PancakeTop100, Bsc1inch],
+  56: [Bsc, PancakeTop100],
   97: [Chapel],
   100: [xDai],
   250: [Fantom],
-  137: [Matic, quickswapTokens, Matic1inch],
+  137: [Matic, quickswapTokens],
   42161: [Arbiturm],
   42220: [Celo],
   80001: [Mumbai],
