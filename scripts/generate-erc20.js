@@ -80,8 +80,6 @@ const getUntreatedTokens = async () => {
           .map((x) => addChainId(x, chainId))
           .flat();
 
-
-  
   const debankTokens = await fetchDebankLogoURI(
     chainId,
     baseTokens.map((x) => x.address)
