@@ -30,6 +30,7 @@ The token lists for Mask.
 | mask                                                                                                    | mask_nft                                                                                                  |
 | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [Latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/latest/tokens.json)    | [Latest](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft.json)           |
+| [v0.0.27](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.27/tokens.json)  | [v0.0.27](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/
 | [v0.0.26](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.26/tokens.json)  | [v0.0.26](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_24.json) |
 | [v0.0.25](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.25/tokens.json)  | [v0.0.25](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_24.json) |
 | [v0.0.24](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/v0.0.24/tokens.json)  | [v0.0.24](https://raw.githubusercontent.com/DimensionDev/Mask-Token-List/gh-pages/mask_nft_v_0_0_24.json) |
