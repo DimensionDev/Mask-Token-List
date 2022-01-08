@@ -356,6 +356,28 @@
     },
     {
       "chainId": 1313161554,
+      "address": "0x0fAD0ED848A7A16526E8a7574e418B015Dbf41B5",
+      "symbol": "PAD",
+      "name": "SmartPad Token",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/smartpad.svg",
+      "tags": [
+        "ethereum"
+      ]
+    },
+    {
+      "chainId": 1313161554,
+      "address": "0xdc9be1ff012d3c6da818d136a3b2e5fdd4442f74",
+      "symbol": "SNX",
+      "name": "Synthetix Network Token",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/snx.svg",
+      "tags": [
+        "ethereum"
+      ]
+    },
+    {
+      "chainId": 1313161554,
       "address": "0x7821c773a12485b12a2b5b7bc451c3eb200986b1",
       "symbol": "SUSHI",
       "name": "SushiToken",
@@ -450,5 +472,48 @@
       "tags": [
         "ethereum"
       ]
-    }
+    },
+    {
+      "name": "Avalanche",
+      "address": "0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844",
+      "symbol": "AVAX",
+      "decimals": 18,
+      "chainId": 1313161554,
+      "logoURI": "https://raw.githubusercontent.com/trisolaris-labs/tokens/master/assets/0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844/logo.png"
+    },
+    {
+      "name": "Polygon",
+      "address": "0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8",
+      "symbol": "MATIC",
+      "decimals": 18,
+      "chainId": 1313161554,
+      "logoURI": "https://raw.githubusercontent.com/trisolaris-labs/tokens/master/assets/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8/logo.png"
+    },
+    {
+      "name": "Binance Coin",
+      "address": "0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c",
+      "symbol": "BNB",
+      "decimals": 18,
+      "chainId": 1313161554,
+      "logoURI": "https://raw.githubusercontent.com/trisolaris-labs/tokens/master/assets/0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c/logo.png"
+    },
+    {
+      "name": "xTRI",
+      "address": "0x802119e4e253D5C19aA06A5d567C5a41596D6803",
+      "symbol": "xTRI",
+      "decimals": 18,
+      "chainId": 1313161554,
+      "logoURI": "https://raw.githubusercontent.com/trisolaris-labs/tokens/master/assets/0x802119e4e253D5C19aA06A5d567C5a41596D6803/logo.png"
+    },
+    {
+      "chainId": 1313161554,
+      "address": "0x984c2505a14da732d7271416356f535953610340",
+      "symbol": "UMINT",
+      "name": "YouMinter",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/umint.svg",
+      "tags": [
+        "ethereum"
+      ]
+    },
   ]
