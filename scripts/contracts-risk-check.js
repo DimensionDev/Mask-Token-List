@@ -12,21 +12,22 @@ const safeChainIds = [
 ];
 let supportChains = [];
 
-const test = {
-  tokens: [
-    {
-      chainId: 1,
-      address: "0x408e41876cccdc0f92210600ef50372656052a38",
-      decimals: 9,
-      name: "AWOOL",
-      symbol: "aWOOL",
-      logoURI:
-        "https://raw.githubusercontent.com/traderjoe-xyz/joe-tokenlists/main/logos/0x5eDE350E84223fb50775fD91a723F2ca71034cf7/logo.png",
-      riskRate: 0,
-      riskDetail: null,
-    },
-  ],
-};
+// const test = {
+//   tokens: [
+//     {
+//       chainId: 1,
+//       address: "0x408e41876cccdc0f92210600ef50372656052a38",
+//       decimals: 9,
+//       name: "AWOOL",
+//       symbol: "aWOOL",
+//       logoURI:
+//         "https://raw.githubusercontent.com/traderjoe-xyz/joe-tokenlists/main/logos/0x5eDE350E84223fb50775fD91a723F2ca71034cf7/logo.png",
+//       riskRate: 0,
+//       riskDetail: null,
+//     },
+//   ],
+// };
+
 const getSupportedChains = async () => {
   if (supportChains.length) return;
   try {
@@ -93,6 +94,6 @@ const singleCheck = async (chainId, address) => {
 
   return res;
 };
-riskCheck(test);
+// riskCheck(test);
 
 exports.riskCheck = riskCheck;
