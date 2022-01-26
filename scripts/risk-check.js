@@ -55,7 +55,7 @@ const riskCheck = async () => {
     process.stdout.write(JSON.stringify(res));
     return res;
   } catch {
-    return "risk check error";
+    process.stdout.write(`risk check error for ChianId: ${chainId}`);
   }
 };
 
