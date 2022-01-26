@@ -50,9 +50,7 @@ const riskCheck = async () => {
     await fetch(url)
       .then((r) => r.json())
       .then((data) => {
-        if (!data.result) return;
         res = data.result;
-        res.riskRate = caculateRate(res);
       });
     process.stdout.write(JSON.stringify(res));
     return res;
