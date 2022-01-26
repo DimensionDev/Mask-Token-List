@@ -22,7 +22,6 @@ const Boba = require("../src/erc20/boba.json");
 const PancakeTop100 = require("../src/erc20/pancake-top100.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
-const { riskCheck } = require("./contracts-risk-check.js");
 
 const getMatamaskLogoURI = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
@@ -150,8 +149,7 @@ const start = async () => {
     "^[a-zA-Z0-9+\\-%/\\$\\.]+$";
   const validate = ajv.compile(schema);
   if (validate(MaskTokenList)) {
-    const riskCheckedList = await riskCheck(MaskTokenList);
-    process.stdout.write(JSON.stringify(riskCheckedList));
+    process.stdout.write(JSON.stringify(MaskTokenList));
   } else {
     console.error("errors on build erc20:");
     console.error(validate.errors);
