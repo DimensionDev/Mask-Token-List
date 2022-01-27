@@ -21,6 +21,8 @@ const fetch = require("node-fetch");
 
 const chainId = Number.parseInt(process.argv.slice(2)[0]);
 
+const supportedChainIds = [1, 56, 42161, 137, 128, 43114];
+
 const chainIdToTokensMapping = {
   1: Mainnet,
   3: Ropsten,
@@ -42,6 +44,10 @@ const chainIdToTokensMapping = {
 
 const riskCheck = async () => {
   try {
+    if (!supportedChainIds.includes(chainId)) {
+      process.stdout.write("unsupportedChainId");
+      return;
+    }
     let res = null;
     const addresses = chainIdToTokensMapping[chainId]
       .map((item) => item.address)
