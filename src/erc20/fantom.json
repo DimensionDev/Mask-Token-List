@@ -29,7 +29,7 @@
     "address": "0x5cc61a78f164885776aa610fb0fe1257df78e59b",
     "chainId": 250,
     "decimals": 18,
-    "logoURI": "https://raw.githubusercontent.com/Layer3Org/spiritswap-tokens-list-icon/3bf8a7f22bf09a0c817113b78f32cfdc4df702b9/token-list/images/0x5Cc61A78F164885776AA610fb0FE1257df78E59B.png"
+    "logoURI": "https://swap.spiritswap.finance/images/coins/SPIRIT.png"
   },
   {
     "name": "SpookySwap",
