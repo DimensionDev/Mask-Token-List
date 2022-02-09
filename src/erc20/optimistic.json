@@ -237,10 +237,7 @@
       "name": "dForce USD",
       "symbol": "USX",
       "decimals": 18,
-      "logoURI": "https://ethereum-optimism.github.io/logos/USX.svg",
-      "extensions": {
-        "optimismBridgeAddress": "0xc76cbFbAfD41761279E3EDb23Fd831Ccb74D5D67"
-      }
+      "logoURI": "https://ethereum-optimism.github.io/logos/USX.svg"
     },
     {
       "chainId": 10,
