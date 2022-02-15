@@ -23,6 +23,31 @@ const chainId = Number.parseInt(process.argv.slice(2)[0]);
 
 const supportedChainIds = [1, 56, 42161, 137, 128, 43114];
 
+const safeRatesRequireCheck = 20;
+const maxDangerRates = 40;
+const rules = [
+  {
+    key: "is_open_source",
+    value: 0,
+  },
+  {
+    key: "is_proxy",
+    value: 1,
+  },
+  {
+    key: "is_mintable",
+    value: 1,
+  },
+  {
+    key: "is_verifiable_team",
+    value: 0,
+  },
+  {
+    key: "is_airdrop_scam",
+    value: 1,
+  },
+];
+
 const chainIdToTokensMapping = {
   1: Mainnet,
   3: Ropsten,
@@ -57,12 +82,44 @@ const riskCheck = async () => {
       .then((r) => r.json())
       .then((data) => {
         res = data.result;
+        if (res) {
+          for (const key in res) {
+            const item = res[key];
+            const rates = caculateRiskRates(item);
+            if (Number.parseInt(rates, 10) >= maxDangerRates) {
+              console.error(
+                "Danger!!!! address: ",
+                key,
+                "prevent build and you should check it in dist chainId:",
+                chainId
+              );
+            }
+            if (Number.parseInt(rates, 10) > safeRatesRequireCheck) {
+              console.error(
+                "Risk token address:",
+                key,
+                "please check it in dist chainId:",
+                chainId
+              );
+            }
+          }
+        }
       });
     process.stdout.write(JSON.stringify(res));
     return res;
-  } catch {
-    process.stdout.write(`risk check error for ChianId: ${chainId}`);
+  } catch (e) {
+    process.stdout.write(`risk check error for ChianId: ${chainId},error:`, e);
   }
+};
+
+const caculateRiskRates = (item) => {
+  let res = 0;
+  rules.forEach((rule) => {
+    if (item[rule.key] == rule.value) {
+      res += 20;
+    }
+  });
+  return res;
 };
 
 riskCheck();
