@@ -75,30 +75,27 @@ const chainIdToTokensMapping = {
 };
 
 const riskCheck = async () => {
+  if (!supportedChainIds.includes(chainId)) {
+    console.log("unsupportedChainId");
+    return;
+  }
+  const addresses = chainIdToTokensMapping[chainId]
+    .map((item) => item.address)
+    .join(",");
+  const url = `${GO_PLUS_LABS_ROOT_URL}/${GO_PLUS_TOKEN_SECURITY_URL}/${chainId}?contract_addresses=${addresses}`;
   try {
-    if (!supportedChainIds.includes(chainId)) {
-      console.log("unsupportedChainId");
-      return;
+    const res = await fetch(url);
+    const data = await res.json()
+    if (data && data.result) {
+      const temp = data.result;
+      console.log(JSON.stringify(temp))
+      for (const key in temp) {
+        const item = temp[key];
+        caculateRiskRates(item, key);
+      }
     }
-    let res = null;
-    const addresses = chainIdToTokensMapping[chainId]
-      .map((item) => item.address)
-      .join(",");
-    const url = `${GO_PLUS_LABS_ROOT_URL}/${GO_PLUS_TOKEN_SECURITY_URL}/${chainId}?contract_addresses=${addresses}`;
-    return fetch(url)
-      .then((r) => r.json().data)
-      .then((data) => {
-        res = data.result;
-        if (res) {
-          for (const key in res) {
-            const item = res[key];
-            caculateRiskRates(item, key);
-            console.log(JSON.stringify(res));
-          }
-        }
-      });
   } catch (e) {
-    console.log(`risk check error for ChianId: ${chainId},error:`, e);
+    console.error(e) 
   }
 };
 
