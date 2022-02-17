@@ -86,33 +86,15 @@ const riskCheck = async () => {
       .join(",");
     const url = `${GO_PLUS_LABS_ROOT_URL}/${GO_PLUS_TOKEN_SECURITY_URL}/${chainId}?contract_addresses=${addresses}`;
     return fetch(url)
-      .then((r) => r.json())
+      .then((r) => r.json().data)
       .then((data) => {
         res = data.result;
         if (res) {
           for (const key in res) {
             const item = res[key];
-            const rates = caculateRiskRates(item);
-            if (Number.parseInt(rates, 10) >= maxDangerRates) {
-              console.error(
-                "\x1B[31m DANGER token address: ",
-                key,
-                "you should check it in dist chainId:",
-                chainId,
-                "and stop build"
-              );
-            }
-            if (Number.parseInt(rates, 10) > safeRatesRequireCheck) {
-              console.error(
-                "\x1B[33m WARNING! Risk token address:",
-                key,
-                "please check it in dist chainId:",
-                chainId
-              );
-            }
+            caculateRiskRates(item, key);
+            console.log(JSON.stringify(res));
           }
-          console.log(JSON.stringify(res));
-          return res;
         }
       });
   } catch (e) {
@@ -120,13 +102,26 @@ const riskCheck = async () => {
   }
 };
 
-const caculateRiskRates = (item) => {
-  return rules.reduce((rates, cur) => {
+const caculateRiskRates = (item, key) => {
+  const res = rules.reduce((rates, cur) => {
     if (item[cur.key] == cur.value) {
       rates += 20;
     }
     return rates;
   }, 0);
+  if (Number.parseInt(res, 10) >= maxDangerRates) {
+    throw new Error(
+      `\x1B[31m DANGER token address: ${key} you should check it in dist chainId: ${chainId}, and stop build`
+    );
+  }
+  if (Number.parseInt(res, 10) > safeRatesRequireCheck) {
+    console.error(
+      "\x1B[33m WARNING! Risk token address:",
+      key,
+      "please check it in dist chainId:",
+      chainId
+    );
+  }
 };
 
 riskCheck();
