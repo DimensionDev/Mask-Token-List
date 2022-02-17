@@ -86,9 +86,8 @@ const riskCheck = async () => {
   try {
     const res = await fetch(url);
     const data = await res.json()
-    if (data && data.result) {
+    if (data?.result) {
       const temp = data.result;
-      console.log(JSON.stringify(temp))
       for (const key in temp) {
         const item = temp[key];
         caculateRiskRates(item, key);
