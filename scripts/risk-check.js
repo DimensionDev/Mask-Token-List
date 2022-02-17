@@ -19,7 +19,7 @@ const GO_PLUS_LABS_ROOT_URL = "https://api.gopluslabs.io";
 const GO_PLUS_TOKEN_SECURITY_URL = "api/v1/token_security";
 const fetch = require("node-fetch");
 
-const chainId = Number.parseInt(process.argv.slice(2)[0]);
+const chainId = Number.parseInt(process.argv.slice(2)[0],10);
 
 const supportedChainIds = [1, 56, 42161, 137, 128, 43114];
 
