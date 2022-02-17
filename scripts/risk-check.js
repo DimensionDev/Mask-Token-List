@@ -17,14 +17,21 @@ const Boba = require("../src/erc20/boba.json");
 
 const GO_PLUS_LABS_ROOT_URL = "https://api.gopluslabs.io";
 const GO_PLUS_TOKEN_SECURITY_URL = "api/v1/token_security";
+
 const fetch = require("node-fetch");
 
 const chainId = Number.parseInt(process.argv.slice(2)[0], 10);
 
+// referer: https://github.com/GoPlusSecurityLabs/OpenAPI/blob/main/SecurityAPI.md
 const supportedChainIds = [1, 56, 42161, 137, 128, 43114];
 
+// max rates to trigger WARNING
 const safeRatesRequireCheck = 20;
+
+// max rates to trigger DANGER
 const maxDangerRates = 40;
+
+// modify here to change the rules referer: https://m8j6huhbzo.feishu.cn/docs/doccn5Sh4ZXxpODCVZ2ddgc6HQc
 const rules = [
   {
     key: "is_open_source",
@@ -70,7 +77,7 @@ const chainIdToTokensMapping = {
 const riskCheck = async () => {
   try {
     if (!supportedChainIds.includes(chainId)) {
-      process.stdout.write("unsupportedChainId");
+      console.log("unsupportedChainId");
       return;
     }
     let res = null;
@@ -78,7 +85,7 @@ const riskCheck = async () => {
       .map((item) => item.address)
       .join(",");
     const url = `${GO_PLUS_LABS_ROOT_URL}/${GO_PLUS_TOKEN_SECURITY_URL}/${chainId}?contract_addresses=${addresses}`;
-    await fetch(url)
+    return fetch(url)
       .then((r) => r.json())
       .then((data) => {
         res = data.result;
@@ -88,38 +95,38 @@ const riskCheck = async () => {
             const rates = caculateRiskRates(item);
             if (Number.parseInt(rates, 10) >= maxDangerRates) {
               console.error(
-                "Danger!!!! address: ",
+                "\x1B[31m DANGER token address: ",
                 key,
-                "prevent build and you should check it in dist chainId:",
-                chainId
+                "you should check it in dist chainId:",
+                chainId,
+                "and stop build"
               );
             }
             if (Number.parseInt(rates, 10) > safeRatesRequireCheck) {
               console.error(
-                "Risk token address:",
+                "\x1B[33m WARNING! Risk token address:",
                 key,
                 "please check it in dist chainId:",
                 chainId
               );
             }
           }
+          console.log(JSON.stringify(res));
+          return res;
         }
       });
-    process.stdout.write(JSON.stringify(res));
-    return res;
   } catch (e) {
-    process.stdout.write(`risk check error for ChianId: ${chainId},error:`, e);
+    console.log(`risk check error for ChianId: ${chainId},error:`, e);
   }
 };
 
 const caculateRiskRates = (item) => {
-  let res = 0;
-  rules.forEach((rule) => {
-    if (item[rule.key] == rule.value) {
-      res += 20;
+  return rules.reduce((rates, cur) => {
+    if (item[cur.key] == cur.value) {
+      rates += 20;
     }
-  });
-  return res;
+    return rates;
+  }, 0);
 };
 
 riskCheck();
