@@ -86,5 +86,181 @@
       "decimals": 18,
       "chainId": 10,
       "logoURI": "https://raw.githubusercontent.com/sushiswap/icons/master/token/slink.jpg"
-    }   
+    },
+    {
+      "chainId": 10,
+      "address": "0x68f180fcCe6836688e9084f035309E29Bf0A2095",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://ethereum-optimism.github.io/logos/WBTC.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x350a791bfc2c21f9ed5d10980dad2e2638ffa7f6",
+      "name": "Chainlink",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/LINK.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x65559aA14915a70190438eF90104769e5E890A00",
+      "name": "Ethereum Name Service",
+      "symbol": "ENS",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/ENS.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0xE405de8F52ba7559f9df3C368500B6E6ae6Cee49",
+      "name": "Synthetic Ether",
+      "symbol": "sETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/sETH.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x298B9B95708152ff6968aafd889c6586e9169f1D",
+      "name": "Synthetic Bitcoin",
+      "symbol": "sBTC",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/sBTC.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0xc5Db22719A06418028A40A9B5E9A7c02959D0d08",
+      "name": "Synthetic Chainlink",
+      "symbol": "sLINK",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/sLINK.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x6fd9d7ad17242c41f7131d257212c54a0e816691",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/UNI.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0xc40f949f8a4e094d1b49a23ea9241d289b7b2819",
+      "name": "LUSD Stablecoin",
+      "symbol": "LUSD",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/LUSD.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x7FB688CCf682d58f86D7e38e03f9D22e7705448B",
+      "name": "Rai Reflex Index",
+      "symbol": "RAI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/RAI.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x9bcef72be871e61ed4fbbc7630889bee758eb81d",
+      "name": "Rocket Pool ETH",
+      "symbol": "rETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/rETH.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x00F932F0FE257456b32dedA4758922E56A4F4b42",
+      "name": "Paper",
+      "symbol": "PAPER",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/PAPER.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x7c6b91d9be155a6db01f749217d76ff02a7227f2",
+      "name": "Sarcophagus",
+      "symbol": "SARCO",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/sarcophagus.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x5029C236320b8f15eF0a657054B84d90bfBEDED3",
+      "name": "BitANT",
+      "symbol": "BitANT",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/BitANT.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0xc98B98d17435AA00830c87eA02474C5007E1f272",
+      "name": "BitBTC",
+      "symbol": "BitBTC",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/BitBTC.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+      "name": "Lyra",
+      "symbol": "LYRA",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/LYRA.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0xE7798f023fC62146e8Aa1b36Da45fb70855a77Ea",
+      "name": "UMA Voting Token v1",
+      "symbol": "UMA",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/UMA.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x9e1028F5F1D5eDE59748FFceE5532509976840E0",
+      "name": "Perpetual",
+      "symbol": "PERP",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/PERP.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0x9e5AAC1Ba1a2e6aEd6b32689DFcF62A509Ca96f3",
+      "name": "dForce",
+      "symbol": "DF",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/DF.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0xbfD291DA8A403DAAF7e5E9DC1ec0aCEaCd4848B9",
+      "name": "dForce USD",
+      "symbol": "USX",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/USX.svg"
+    },
+    {
+      "chainId": 10,
+      "address": "0x3e7eF8f50246f725885102E8238CBba33F276747",
+      "name": "BarnBridge Governance Token",
+      "symbol": "BOND",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/BOND.svg"
+    }, 
+    {
+      "chainId": 10,
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/WETH.png"
+    },
+    {
+      "chainId": 10,
+      "address": "0xab7badef82e9fe11f6f33f87bc9bc2aa27f2fcb5",
+      "name": "Maker",
+      "symbol": "MKR",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/logos/MKR.png"
+    }  
 ]
