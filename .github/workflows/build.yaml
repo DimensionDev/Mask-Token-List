@@ -17,5 +17,8 @@ jobs:
       - name: Install
         run: yarn install
 
+      - name: Prettier Check
+        run: yarn prettier
+
       - name: Build
         run: yarn build

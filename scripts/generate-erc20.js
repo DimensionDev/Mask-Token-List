@@ -23,7 +23,7 @@ const QucikSwapTokens = require("../src/erc20/quickswap.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
 
-const getMatamaskLogoURI = (url) =>
+const getMetaMaskLogoURL = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
 
 const chainId = Number.parseInt(process.argv.slice(2)[0]);
@@ -102,7 +102,7 @@ const getUntreatedTokens = async () => {
     );
     const logoURI =
       tokenWithLogoURI?.logoURI ||
-      (logo && getMatamaskLogoURI(logo)) ||
+      (logo && getMetaMaskLogoURL(logo)) ||
       token.logoURI;
 
     return logoURI ? { ...rest, logoURI } : { ...rest };
@@ -123,7 +123,7 @@ const start = async () => {
         return 0;
       }),
     {
-      name: "Mask",
+      name: "Mask Network",
       logoURI:
         "https://raw.githubusercontent.com/DimensionDev/Maskbook-Website/master/img/MB--CircleCanvas--WhiteOverBlue.svg",
       keywords: [
@@ -151,9 +151,9 @@ const start = async () => {
   if (validate(MaskTokenList)) {
     process.stdout.write(JSON.stringify(MaskTokenList));
   } else {
-    console.error('Failed to build ERC20 token list.')
+    console.error("Failed to build ERC20 token list.");
     console.error(validate.errors);
-    process.exit(1)
+    process.exit(1);
   }
 };
 
