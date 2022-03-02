@@ -2,8 +2,7 @@ name: Build
 
 on:
   pull_request:
-    branches:
-      - * # Set a branch name to trigger deployment
+    branches: [master]
 
 jobs:
   build:
