@@ -3,7 +3,7 @@ const path = require("path");
 const fetch = require("node-fetch");
 
 const url = "https://tokens.pancakeswap.finance/pancakeswap-top-100.json";
-const fileDest = path.resolve(__dirname, "../src/erc20/pancake-top100.json");
+const fileDest = path.resolve(__dirname, "../src/erc20/pancake.json");
 
 async function fetchTop100() {
   const res = await fetch(url);
