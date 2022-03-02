@@ -1,7 +1,7 @@
-const { schema } = require("@uniswap/token-lists");
 const Ajv = require("ajv");
-const metadata = require("../src/erc20/contract-metadata.json");
 const { EthereumAddress } = require("wallet.ts");
+const { schema } = require("@uniswap/token-lists");
+const metadata = require("../src/erc20/contract-metadata.json");
 const Mainnet = require("../src/erc20/mainnet.json");
 const Ropsten = require("../src/erc20/ropsten.json");
 const Rinkeby = require("../src/erc20/rinkeby.json");
@@ -28,7 +28,7 @@ const getMatamaskLogoURI = (url) =>
 
 const chainId = Number.parseInt(process.argv.slice(2)[0]);
 
-const metaMaskToken = Object.keys(metadata)
+const MetaMask = Object.keys(metadata)
   .filter((key) => {
     const record = metadata[key];
     return (
@@ -59,7 +59,7 @@ const QuickSwap = QucikSwapTokens.tokens.map(
 );
 
 const chainIdToTokensMapping = {
-  1: [metaMaskToken, Mainnet],
+  1: [MetaMask, Mainnet],
   3: [Ropsten],
   4: [Rinkeby],
   10: [Optimistic],
@@ -151,9 +151,9 @@ const start = async () => {
   if (validate(MaskTokenList)) {
     process.stdout.write(JSON.stringify(MaskTokenList));
   } else {
-    console.error("errors on build erc20:");
+    console.error('Failed to build ERC20 token list.')
     console.error(validate.errors);
-    process.exit(1);
+    process.exit(1)
   }
 };
 
