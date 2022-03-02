@@ -1,3 +1,5 @@
+**This Repo will not maintain anymore. Please redirect to https://github.com/DimensionDev/Mask-Token-Lists.**
+
 # Mask Token Lists
 
 The token lists for Mask.
