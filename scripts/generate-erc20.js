@@ -1,5 +1,4 @@
 const { schema } = require("@uniswap/token-lists");
-const quickswapTokenlist = require("../src/erc20/quickswap.json");
 const Ajv = require("ajv");
 const metadata = require("../src/erc20/contract-metadata.json");
 const { EthereumAddress } = require("wallet.ts");
@@ -20,6 +19,7 @@ const Aurora = require("../src/erc20/aurora.json");
 const Avalanche = require("../src/erc20/avalanche.json");
 const Boba = require("../src/erc20/boba.json");
 const Pancake = require("../src/erc20/pancake.json");
+const QucikSwapTokens = require("../src/erc20/quickswap.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
 
@@ -48,7 +48,7 @@ const metaMaskToken = Object.keys(metadata)
     logo: metadata[key].logo,
   }));
 
-const quickswapTokens = quickswapTokenlist.tokens.map(
+const QuickSwap = QucikSwapTokens.tokens.map(
   ({ name, address, symbol, decimals, logoURI }) => ({
     name,
     address,
@@ -69,7 +69,7 @@ const chainIdToTokensMapping = {
   122: [Fuse],
   250: [Fantom],
   288: [Boba],
-  137: [Matic, quickswapTokens],
+  137: [Matic, QuickSwap],
   42161: [Arbiturm],
   42220: [Celo],
   43114: [Avalanche],
