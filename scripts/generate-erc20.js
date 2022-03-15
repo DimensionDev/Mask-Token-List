@@ -22,6 +22,7 @@ const Pancake = require("../src/erc20/pancake.json");
 const QucikSwapTokens = require("../src/erc20/quickswap.json");
 const { fetchDebankLogoURI } = require("./fetch-debank-logo-uri");
 const { addChainId, generateTokenList } = require("./shared");
+const  {invalidContractList}  = require('./invalid-contract')
 
 const getMetaMaskLogoURL = (url) =>
   `https://raw.githubusercontent.com/MetaMask/contract-metadata/master/images/${url}`;
@@ -111,8 +112,9 @@ const getUntreatedTokens = async () => {
 
 const start = async () => {
   const tokens = await getUntreatedTokens();
+  const tmpTokensList = await invalidContractList(tokens)
   const MaskTokenList = generateTokenList(
-    tokens
+    tmpTokensList
       .map((x) => ({
         ...x,
         address: EthereumAddress.checksumAddress(x.address),
